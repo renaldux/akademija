@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: renaldas
+ * Date: 15.11.1
+ * Time: 10.35
+ */
+
+class Person {
+    private $name;
+    private $email;
+    private $gender;
+
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+            return $this->$property;
+        }
+    }
+
+    public function __set($property, $value) {
+        if (property_exists($this, $property)) {
+            $this->$property = $value;
+        }
+
+        return $this;
+    }
+    public function getLastName(){
+        if(!empty($this->name)){
+            return end(explode(' ', $this->name));
+        }
+        return '';
+    }
+}
