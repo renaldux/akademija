@@ -12,17 +12,73 @@ class Article{
     private $anotation;
     private $date;
 
-    public function __get($property) {
-        if (property_exists($this, $property)) {
-            return $this->$property;
-        }
+    /**
+     * @return Article object
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 
-    public function __set($property, $value) {
-        if (property_exists($this, $property)) {
-            $this->$property = $value;
-        }
-
+    /**
+     * @param Article $article
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
         return $this;
     }
+
+    /**
+     * @return price
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param int $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+        return $this;
+    }
+
+    /**
+     * @return string $anotation
+     */
+    public function getAnotation()
+    {
+        return $this->anotation;
+    }
+
+    /**
+     * @param string $anotation
+     */
+    public function setAnotation($anotation)
+    {
+        $this->anotation = $anotation;
+        return $this;
+    }
+
+    /**
+     * @return date
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param date $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
+
+
 }

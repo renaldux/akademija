@@ -14,17 +14,90 @@ class Bid {
     private $article;
     private $sold ;
 
-    public function __get($property) {
-        if (property_exists($this, $property)) {
-            return $this->$property;
-        }
+    /**
+     * @return User $user
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
-    public function __set($property, $value) {
-        if (property_exists($this, $property)) {
-            $this->$property = $value;
-        }
-
+    /**
+     * @param User $user
+     */
+    public function setUser(Person $user)
+    {
+        $this->user = $user;
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param int $value
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * @return date
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param date $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * @param string $article
+     */
+    public function setArticle(Article $article)
+    {
+        $this->article = $article;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSold()
+    {
+        return $this->sold;
+    }
+
+    /**
+     * @param string $sold
+     */
+    public function setSold($sold)
+    {
+        $this->sold = $sold;
+        return $this;
+    }
+
+
 }

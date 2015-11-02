@@ -8,143 +8,144 @@ $articlesArray = array();
 $bidArr = array();
 
 $person1 = new Person();
-$person1->name = "Bert Rose";
-$person1->email = "rose@phoroneus.com";
-$person1->gender = "female";
+$person1->setName("Bert Rose")
+        ->setEmail("rose@phoroneus.com")
+        ->setGender("female");
 
 $person2 = new Person();
-$person2->name = "Rush Tommy";
-$person2->email = "rush@chronos.com";
-$person2->gender = "male";
+$person2->setName("Rush Tommy")
+        ->setEmail("rush@chronos.com")
+        ->setGender("male");
 
 $person3 = new Person();
-$person3->name = "Miguel Howard";
-$person3->email = "howard@aurigae.com";
-$person3->gender = "male";
+$person3->setName("Miguel Howard")
+        ->setEmail("howard@aurigae.com")
+        ->setGender("male");
 
 $article1 = new Article();
-$article1->article = "Gold Watch";
-$article1->price = 10;
-$article1->anotation = "New with tags: A brand-new, unused, and unworn item (including handmade items) in the original packaging
-    (such as the original box or bag) and/or with the original tags attached";
-$article1->date = '2015-10-26 15:45';
+$article1->setArticle("Gold Watch")
+            ->setPrice(10)
+            ->setAnotation("New with tags: A brand-new, unused, and unworn item (including handmade items) in the original packaging
+    (such as the original box or bag) and/or with the original tags attached")
+            ->setDate('2015-10-26 15:45');
 $articlesArray[] = $article1;
 
 $article2 = new Article();
-$article2->article = "Silver Watch";
-$article2->price = 5;
-$article2->anotation = "New with tags: A brand-new, unused, and unworn item (including handmade items) in the original packaging
-    (such as the original box or bag) and/or with the original tags attached";
-$article2->date = '2015-12-13 15:45';
+$article2->setArticle("Silver Watch")
+            ->setPrice(5)
+            ->setAnotation("New with tags: A brand-new, unused, and unworn item (including handmade items) in the original packaging
+    (such as the original box or bag) and/or with the original tags attached")
+            ->setDate('2015-12-13 15:45');
 $articlesArray[] = $article2;
 
 $article3 = new Article();
-$article3->article = "Bronze Watch";
-$article3->price = 2;
-$article3->anotation = "New with tags: A brand-new, unused, and unworn item (including handmade items) in the original packaging
-    (such as the original box or bag) and/or with the original tags attached";
-$article3->date = '2015-10-26 15:45';
+$article3->setArticle("Bronze Watch")
+            ->setPrice(2)
+            ->setAnotation("New with tags: A brand-new, unused, and unworn item (including handmade items) in the original packaging
+    (such as the original box or bag) and/or with the original tags attached")
+            ->setDate('2015-10-26 15:45');
 $articlesArray[] = $article3;
 
 $article4 = new Article();
-$article4->article = "Linen Jacket";
-$article4->anotation = "It has a smooth chalk stripe pattern which gives the suit a refined look. The 6 buttons of his double
+$article4->setArticle("Linen Jacket")
+            ->setAnotation("It has a smooth chalk stripe pattern which gives the suit a refined look. The 6 buttons of his double
     breasted jacket are all buttoned up with the exception of one, it adds a casual touch to an elegant look.<br>
     The jacket is the same length all around, it has vents at either side, there's a pocket on either side and there's
-    a breast pocket which contains a stylish pocket square.";
-$article4->price = 135;
-$article4->time = "2015-10-29 12:00";
+    a breast pocket which contains a stylish pocket square.")
+    ->setPrice(135)
+    ->setDate("2015-10-29 12:00");
 $articlesArray[] = $article4;
 
 $bid1 = new Bid();
-$bid1->user = $person1;
-$bid1->value = 12;
-$bid1->article = $article1;
-$bid1->date = '2015-10-25 12:22';
-$bidArr[$article1->article][] = $bid1;
+$bid1->setUser($person1)
+        ->setValue(12)
+        ->setArticle($article1)
+        ->setDate('2015-10-25 12:22');
+$bidArr[$article1->getArticle()][] = $bid1;
 
 $bid2 = new Bid();
-$bid2->user = $person2;
-$bid2->value = 13;
-$bid1->article = $article1;
-$bid2->date = '2015-10-25 12:22';
-$bidArr[$article1->article][] = $bid2;
+$bid2->setUser($person2)
+    ->setValue(13)
+    ->setArticle($article1)
+    ->setDate('2015-10-25 12:22');
+
+$bidArr[$bid2->getArticle()->getArticle()][] = $bid2;
 
 $bid3 = new Bid();
-$bid3->user = $person1;
-$bid3->value = 15.5;
-$bid3->article = $article1;
-$bid3->date = '2015-10-25 12:22';
-$bid3->sold = 'Sold';
-$bidArr[$article1->article][] = $bid3;
+$bid3->setUser($person1)
+    ->setValue(15.5)
+    ->setArticle($article1)
+    ->setDate('2015-10-25 12:22')
+    ->setSold('Sold');
+$bidArr[$bid3->getArticle()->getArticle()][] = $bid3;
 
 $bid4 = new Bid();
-$bid4->user = $person2;
-$bid4->value = 6;
-$bid4->article = $article2;
-$bid4->date = '2015-10-25 12:22';
-$bidArr[$article2->article][] = $bid4;
+$bid4->setUser($person2)
+    ->setValue(6)
+    ->setArticle($article2)
+    ->setDate('2015-10-25 12:22');
+$bidArr[$bid4->getArticle()->getArticle()][] = $bid4;
 
 $bid5 = new Bid();
-$bid5->user = $person1;
-$bid5->value = 6.5;
-$bid5->article = $article2;
-$bid5->date = '2015-10-25 12:22';
-$bidArr[$article2->article][] = $bid5;
+$bid5->setUser($person1)
+    ->setValue(6.5)
+    ->setArticle($article2)
+    ->setDate('2015-10-25 12:22');
+$bidArr[$bid5->getArticle()->getArticle()][] = $bid5;
 
 $bid6 = new Bid();
-$bid6->user = $person1;
-$bid6->value = 3;
-$bid6->article = $article3;
-$bid6->date = '2015-10-25 12:22';
-$bidArr[$article3->article][] = $bid6;
+$bid6->setUser($person1)
+    ->setValue(3)
+    ->setArticle($article3)
+    ->setDate('2015-10-25 12:22');
+$bidArr[$bid6->getArticle()->getArticle()][] = $bid6;
 
 $bid7 = new Bid();
-$bid7->user = $person2;
-$bid7->value = 3.5;
-$bid7->article = $article3;
-$bid7->date = '2015-10-25 12:22';
-$bidArr[$article3->article][] = $bid7;
+$bid7->setUser($person2)
+    ->setValue(4)
+    ->setArticle($article3)
+    ->setDate('2015-10-25 12:22');
+$bidArr[$bid7->getArticle()->getArticle()][] = $bid7;
 
 $bid8 = new Bid();
-$bid8->user = $person3;
-$bid8->value = 140;
-$bid8->date = '2015-10-28 13:58';
-$bid8->article = $article4;
-$bidArr[$article4->article][] = $bid8;
+$bid8->setUser($person3)
+    ->setValue(140)
+    ->setArticle($article4)
+    ->setDate('2015-10-28 13:58');
+$bidArr[$bid8->getArticle()->getArticle()][] = $bid8;
 
 $bid9 = new Bid();
-$bid9->user = $person2;
-$bid9->value = 155;
-$bid9->date = '2014-10-29 9:13';
-$bid9->article = $article4;
-$bidArr[$article4->article][] = $bid9;
+$bid9->setUser($person2)
+    ->setValue(155)
+    ->setArticle($article4)
+    ->setDate('2014-10-29 9:13');
+$bidArr[$bid9->getArticle()->getArticle()][] = $bid9;
 
 
     $html = "<dl>";
 foreach ($articlesArray as $article) {
 
-    $html .= "<dt>{$article->article}</dt>
-    <dd><p>{$article->anotation}</p>
-    <p>Price: {$article->price}&euro;</p>";
+    $html .= "<dt>{$article->getArticle()}</dt>
+    <dd><p>{$article->getAnotation()}</p>
+    <p>Price: {$article->getPrice()}&euro;</p>";
 
-    if(strtotime($article->date) < time()){
+    if(strtotime($article->getDate()) < time()){
 
-        $html .= "<p>Ended {$article->date}</p>";
+        $html .= "<p>Ended {$article->getDate()}</p>";
     }else{
-        $html .= "<p>Ends {$article->date}</p>";
+        $html .= "<p>Ends {$article->getDate()}</p>";
     }
 
 
     $html .= "<p><ul>";
-    $bids = array_reverse($bidArr[$article->article]);
+    $bids = array_reverse($bidArr[$article->getArticle()]);
 
         foreach($bids as $bid){
             $html .= "
-            <li>{$bid->user->getLastName()};
-             {$bid->value}&euro;
-             {$bid->date};";
-             $html .= ($bid->sold)?' '.$bid->sold.';':'';
+            <li>{$bid->getUser()->getLastName()};
+             {$bid->getValue()}&euro;
+             {$bid->getDate()};";
+             $html .= ($bid->getSold())?' '.$bid->getSold().';':'';
              $html .= "</li>";
         }
 

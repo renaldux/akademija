@@ -11,19 +11,60 @@ class Person {
     private $email;
     private $gender;
 
-    public function __get($property) {
-        if (property_exists($this, $property)) {
-            return $this->$property;
-        }
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
-    public function __set($property, $value) {
-        if (property_exists($this, $property)) {
-            $this->$property = $value;
-        }
-
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @return enum 'male','female'
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * @param enum $gender ['male','female']
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+        return $this;
+    }
+
+    /**
+     * @return string lastName
+     */
     public function getLastName(){
         if(!empty($this->name)){
             return end(explode(' ', $this->name));
