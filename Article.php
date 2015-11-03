@@ -6,6 +6,8 @@
  * Time: 10.35
  */
 
+namespace Article;
+
 class Article{
     private $article;
     private $price;

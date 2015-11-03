@@ -6,6 +6,8 @@
  * Time: 10.36
  */
 
+namespace Bid;
+
 class Bid {
 
     private $user;
@@ -57,7 +59,7 @@ class Bid {
     }
 
     /**
-     * @param date $date
+     * @param string $date
      */
     public function setDate($date)
     {

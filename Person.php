@@ -5,6 +5,7 @@
  * Date: 15.11.1
  * Time: 10.35
  */
+namespace Person;
 
 class Person {
     private $name;
@@ -67,7 +68,8 @@ class Person {
      */
     public function getLastName(){
         if(!empty($this->name)){
-            return end(explode(' ', $this->name));
+            $nameArr = explode(' ', $this->name);
+            return end($nameArr);
         }
         return '';
     }
