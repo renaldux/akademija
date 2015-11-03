@@ -8,6 +8,9 @@
 
 namespace Bid;
 
+use Person;
+use Article;
+
 class Bid {
 
     private $user;
@@ -27,7 +30,7 @@ class Bid {
     /**
      * @param User $user
      */
-    public function setUser(Person $user)
+    public function setUser(Person\Person $user)
     {
         $this->user = $user;
         return $this;
@@ -78,7 +81,7 @@ class Bid {
     /**
      * @param string $article
      */
-    public function setArticle(Article $article)
+    public function setArticle(Article\Article $article)
     {
         $this->article = $article;
         return $this;
