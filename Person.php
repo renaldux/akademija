@@ -54,7 +54,7 @@ class Person {
     }
 
     /**
-     * @param enum $gender ['male','female']
+     * @param string $gender ['male','female']
      */
     public function setGender($gender)
     {

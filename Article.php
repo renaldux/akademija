@@ -21,7 +21,7 @@ class Article{
     }
 
     /**
-     * @param Article $article
+     * @param string $article
      */
     public function setArticle($article)
     {
@@ -72,7 +72,7 @@ class Article{
     }
 
     /**
-     * @param date $date
+     * @param string $date
      */
     public function setDate($date)
     {
